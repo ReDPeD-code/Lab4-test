@@ -4,40 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Lab4.Core;
 
 public class ReportService
 {
     public string BuildReport(int a, int b)
     {
-        var password = "admin123";     // захардкоженный пароль
-        int unused = 5;                // неиспользуемая переменная
-        try
-        {
-            return (a / b).ToString();
-        }
-        catch (Exception)
-        {
-        }                              // пустой catch
-        return "";
+        if (b == 0) return string.Empty;
+        return (a / b).ToString();
     }
 
-    public string FormatA(string name, int value)
+    public string Format(string? text, int value)
     {
-        if (name == null) return "";
-        var result = name.Trim() + ": " + value;
-        result = result.ToUpper();
-        result = result.Replace(" ", "_");
-        return result;
-    }
-
-    public string FormatB(string title, int count)
-    {
-        if (title == null) return "";
-        var result = title.Trim() + ": " + count;
-        result = result.ToUpper();
-        result = result.Replace(" ", "_");
-        return result;
+        if (text == null) return string.Empty;
+        return $"{text.Trim()}: {value}".ToUpper().Replace(" ", "_");
     }
 }
+
 
