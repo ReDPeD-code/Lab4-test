@@ -49,5 +49,24 @@ public class ValidatorTests
     {
         Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validator.Grade(score));
     }
+
+    [TestMethod]
+    public void Reverse_NormalString_ReturnsReversed()
+    {
+        Assert.AreEqual("cba", Validator.Reverse("abc"));
+    }
+
+    [TestMethod]
+    public void Reverse_EmptyString_ReturnsEmpty()
+    {
+        Assert.AreEqual("", Validator.Reverse(""));
+    }
+
+    [TestMethod]
+    public void Reverse_Null_Throws()
+    {
+        Assert.ThrowsException<ArgumentNullException>(() => Validator.Reverse(null!));
+    }
+
 }
 
