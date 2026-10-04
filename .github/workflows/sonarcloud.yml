@@ -46,7 +46,7 @@ jobs:
 
       - name: Test with coverage
         run: >
-          dotnet test --no-build
+          dotnet test Lab4.core/Lab4.core.sln --no-build
           --collect:"XPlat Code Coverage"
           -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
 
