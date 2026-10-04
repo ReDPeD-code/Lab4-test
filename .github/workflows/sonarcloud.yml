@@ -42,7 +42,7 @@ jobs:
 
 
       - name: Build
-        run: dotnet build --no-incremental
+        run: dotnet build Lab4.core/Lab4.core.sln --no-incremental
 
       - name: Test with coverage
         run: >
